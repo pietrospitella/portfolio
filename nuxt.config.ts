@@ -8,5 +8,16 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules: [
+    'nuxt-anchorscroll'
+  ],
+  anchorscroll: {
+    hooks: [
+      'page:transition:finish',
+    ],
+  },
+  build: {
+    transpile: ['gsap'],
+  },
   compatibilityDate: "2024-07-04"
 })

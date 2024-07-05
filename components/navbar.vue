@@ -11,7 +11,13 @@
                 </div>
                 <ul tabindex="0"
                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                    <li><a>Who I Am</a></li>
+                    <li>
+                        <NuxtLink
+                            @click="scrollToAnchor('about')"
+                        >
+                            Who I Am
+                        </NuxtLink>
+                    </li>
                     <!-- <li>
           <a>Parent</a>
           <ul class="p-2">
@@ -19,14 +25,31 @@
             <li><a>Submenu 2</a></li>
           </ul>
         </li> -->
-                    <li><a>My Skills</a></li>
+                    <li>
+                        <NuxtLink
+                            @click="scrollToAnchor('skills')"
+                        >
+                            My Skills
+                        </NuxtLink>
+                    </li>
                 </ul>
             </div>
-            <a class="btn btn-ghost text-xl">daisyUI</a>
+            <NuxtLink
+                class="btn btn-ghost text-xl"
+                @click="scrollToTop()"
+            >
+                Pietro Spitella
+            </NuxtLink>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
-                <li><a>Who I Am</a></li>
+                <li>
+                    <NuxtLink
+                        @click="scrollToAnchor('about')"
+                    >
+                        Who I Am
+                    </NuxtLink>
+                </li>
                 <!-- <li>
         <details>
           <summary>Parent</summary>
@@ -36,7 +59,13 @@
           </ul>
         </details>
       </li> -->
-                <li><a>My Skills</a></li>
+                <li>
+                        <NuxtLink
+                            @click="scrollToAnchor('skills')"
+                        >
+                            My Skills
+                        </NuxtLink>
+                    </li>
             </ul>
         </div>
         <div class="navbar-end">
@@ -64,5 +93,12 @@
 import { ref } from 'vue'
 
 const dark = ref(false)
-
+const { scrollToAnchor, scrollToTop } = useAnchorScroll({
+  toTop: {
+    scrollOptions: {
+      behavior: 'smooth',
+      offsetTop: 0,
+    }
+  }
+})
 </script>
