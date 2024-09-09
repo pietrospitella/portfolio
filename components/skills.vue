@@ -1,45 +1,86 @@
 <template>
-    <div id="skills" class="hero bg-sky-200 min-h-screen">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-            <!-- <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-                class="max-w-sm rounded-lg shadow-2xl" /> -->
-            <div>
-                <h1 class="text-5xl font-bold">My Skills</h1>
-                <p class="py-6">
-                    Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                    quasi. In deleniti eaque aut repudiandae et a id nisi.
-                </p>
-                <div class="carousel carousel-center bg-neutral h-28 rounded-box space-x-4 p-4">
-                    <div class="carousel-item">
-                        <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
-                            class="rounded-box" />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
-                            class="rounded-box" />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
-                            class="rounded-box" />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg"
-                            class="rounded-box" />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg"
-                            class="rounded-box" />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg"
-                            class="rounded-box" />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg"
-                            class="rounded-box" />
-                    </div>
-                </div>
-            </div>
+  <div id="skills" class="hero min-h-screen">
+    <div class="hero-content">
+      <div data-aos="fade-down">
+        <h1 class="text-5xl font-bold">{{$t('skillsTitle')}}</h1>
+        <div class="flex flex-col">
+          <p class="py-6">
+            {{$t('skillsDesc')}}
+          </p>
+          <div class="mx-4 overflow-hidden">
+            <Swiper
+              class="mySwiper swiper-cards"
+              :modules="[SwiperAutoplay, SwiperEffectCoverflow, SwiperPagination]" 
+              :slides-per-view="1"
+              :loop="true"
+              :effect="'coverflow'" 
+              :autoplay="{
+                delay: 8000,
+                disableOnInteraction: true
+              }"
+            >
+              <SwiperSlide 
+                v-for="(skill, idx) in skills" 
+                :key="skill.name"
+                class="flex flex-col bg-base-content"
+              >
+                <component class="h-20" title="fff" :is="getIcon(skill.fileName)" />
+                <span class="text-base capitalize text-white">{{ skill.iconName }}</span>
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </div>
-    </div>
+      </div>
+    </div> 
+  </div>
 </template>
+
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue'
+import { ref, onMounted } from 'vue'
+import iconsJSON from '../assets/icons.json'
+
+const skills = ref()
+
+const getIcon = (id: string) => defineAsyncComponent(() => import(`../assets/icons/${id}.svg?component`))
+
+onMounted(async () => {
+  skills.value = iconsJSON.icons
+})
+</script>
+
+<style scoped>
+.swiper-slide {
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  height: 20vh;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+.swiper-wrapper {
+  min-width: 100vh;
+  width: 100vh;
+}
+.swiper-cards {
+  width: 240px;
+}
+.swiper-cards .swiper-slide {
+  border-radius: 8px;
+}
+ul .skill_items {
+  display:inline-block;
+  font-weight: bold;
+}
+
+ul .skill_items:not(:last-child) {
+  padding-right: 4px;
+}
+ul .skill_items:not(:last-child)::after {
+  content: " -";
+  
+}
+</style>

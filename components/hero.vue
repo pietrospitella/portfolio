@@ -1,48 +1,52 @@
 <template>
-    <div id="hero" class="hero min-h-screen"
-        style="background-image: url(https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-neutral-content text-center fading_el opacity-0">
-            <div class="max-w-md">
-                <h1 class="mb-5 text-5xl font-bold">Hello, I'm Pietro Spitella</h1>
-                <p class="mb-5">
-                    Just another Fronted Developer.
+    <div id="hero" data-aos="fade-down" class="hero min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="relative">
+                <img src="../assets/images/hero-pic.jpeg" class="max-w-xs rounded-lg shadow-2xl" />
+            </div>
+            <div class="mx-6">
+                <h1 class="text-5xl font-bold">{{$t('welcomeMsg')}}Pietro</h1>
+                <p class="py-6">
+                    {{$t('welcomeMsg2')}}<b class="text-xl">{{$t('role')}}</b>
                 </p>
-                <button @click="scrollToAnchor('about')" class="btn btn-primary">Know Me</button>
-                    <client-only>
-                        <Vue3Lottie
-                            class="fading_el"
-                            :animationData="pcJSON"
-                            :height="300"
-                            :width="300"
-                        />
-                    </client-only>
+                <div class="actions flex justify-between items-center">
+                    <a href="../assets/files/Spitella_Pietro_CV_240822.pdf" download>
+                        <button class="btn btn-outline">
+                            {{$t('downloadCv')}}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-download">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </button>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pietro-spitella" target="_blank">
+                        <button class="btn btn-outline p-3 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-linkedin">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </button>
+                    </a>
+                    <a href="https://github.com/pietrospitella" target="_blank">
+                        <button class="btn btn-outline p-3 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-github">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </template>
-
-<script setup>
-import { gsap } from "gsap"
-import { onMounted } from "vue"
-import { Vue3Lottie } from 'vue3-lottie'
-import pcJSON from '../assets/pc.json'
-
-const { scrollToAnchor } = useAnchorScroll({
-  toTop: {
-    scrollOptions: {
-      behavior: 'smooth',
-      offsetTop: 0,
-    }
-  }
-})
-
-onMounted(() => {
-    gsap.to('.fading_el', {
-        y: 50,
-        duration: 2,
-        delay: 0.5,
-        opacity: 1
-    })
-})
-</script>

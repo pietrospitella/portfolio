@@ -1,0 +1,13 @@
+{
+    "welcomeMsg": "Hi, i'm ",
+    "welcomeMsg2": "and i'm a ",
+    "role": "Frontend Developer",
+    "downloadCv": "Download CV",
+    "aboutTitle": "Who I Am",
+    "aboutDesc": "I'm a frontend developer with over {expYears} years of experience creating unique online solutions. I am passionate about creating user interfaces that are both intuitive and visually beautiful. Skilled in cross-platform programming, using JavaScript, TypeScript, Vue, React Native, and Node.js to create high-quality products.",
+    "skillsTitle": "My Skills",
+    "skillsDesc": "These are the skills and technologies that I have had the opportunity to work with since I started my journey:",
+    "projectsTitle": "My Projects",
+    "projectsDesc": "Even when I'm not working, I like learning about new technologies to improve my programming skills. You can check out some of the projects I created right below:",
+    "allRightsReserved": "All rights reserved"
+}

@@ -1,0 +1,10 @@
+{
+    "projects": [
+        {
+            "name": "ToDoSpit",
+            "icon": "todospit",
+            "description": "A simple ToDo app made with Vue 3, TailwindCSS and Firebase",
+            "link": "https://github.com/pietrospitella/todospit"
+        }
+    ]
+}

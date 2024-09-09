@@ -1,0 +1,13 @@
+{
+    "welcomeMsg": "Piacere, ",
+    "welcomeMsg2": "sono uno ",
+    "role": "Sviluppatore Frontend",
+    "downloadCv": "Scarica CV",
+    "aboutTitle": "Chi sono",
+    "aboutDesc": "Sono uno sviluppatore frontend con oltre {expYears} anni di esperienza nella creazione di soluzioni online uniche. La mia passione è creare interfacce utente che siano allo stesso tempo intuitive e visivamente belle. Esperto nella programmazione multipiattaforma, utilizzando JavaScript, TypeScript, Vue, React Native e Node.js per creare prodotti di alta qualità.",
+    "skillsTitle": "Le mie skills",
+    "skillsDesc": "Queste sono le skills e le tecnologie con cui ho avuto modo di lavorare da quando ho iniziato il mio percorso:",
+    "projectsTitle": "I miei progetti",
+    "projectsDesc": "Anche quando non sono al lavoro, mi piace imparare nuove tecnologie per migliorare le mie skills da programmatore. Puoi dare un'occhiata ad alcuni dei progetti che ho creato proprio qui sotto:",
+    "allRightsReserved": "Tutti i diritti riservati"
+}

@@ -2,22 +2,33 @@
   <div>
     <NuxtRouteAnnouncer />
     <Navbar/>
-    <Hero/>
-    <About/>
-    <Skills/>
-    <Footer/>
+    <div>
+      <Hero/>
+      <About/>
+      <Skills/>
+      <Projects/>
+      <Footer/>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import AOS from 'aos'
+import { useNuxtApp } from '#app'
+
+const { $viewport } = useNuxtApp() as any
+
+onMounted(() => 
+AOS.init({
+  once: true
+}))
+
 useHead({
   title: 'Pietro Spitella',
-  meta: [
-    { name: 'description', content: 'My amazing site.' }
-  ],
+  meta: [],
   bodyAttrs: {
-    class: 'test'
+    class: ''
   },
-  script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
+  script: []
 })
 </script>

@@ -5,19 +5,32 @@ export default defineNuxtConfig({
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {},
+      autoprefixer: {}
     },
   },
+  plugins: [
+    { src: '~/plugins/aos.client', mode: 'client' }
+  ],
   modules: [
-    'nuxt-anchorscroll'
+    'nuxt-anchorscroll',
+    'nuxt-locomotive-scroll',
+    'nuxt-swiper',
+    '@nuxtjs/i18n',
+    '@nuxt/image',
+    'nuxt-svgo',
+    '@nuxtjs/color-mode',
+    'nuxt-viewport'
   ],
   anchorscroll: {
     hooks: [
       'page:transition:finish',
     ],
   },
-  build: {
-    transpile: ['gsap'],
+  i18n: {
+    vueI18n: './locales/i18n.config.ts' // if you are using custom path, default
   },
-  compatibilityDate: "2024-07-04"
+  build: {
+    transpile: [],
+  },
+  compatibilityDate: '2024-07-04'
 })

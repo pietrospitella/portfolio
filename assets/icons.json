@@ -1,0 +1,174 @@
+{
+    "icons": [
+        {
+            "iconName": "Android",
+            "fileName": "android",
+            "visible": true
+        },
+        {
+            "iconName": "Angular",
+            "fileName": "angular",
+            "visible": true
+        },
+        {
+            "iconName": "Apple",
+            "fileName": "apple",
+            "visible": true
+        },
+        {
+            "iconName": "Axios",
+            "fileName": "axios",
+            "visible": true
+        },
+        {
+            "iconName": "Cordova",
+            "fileName": "cordova",
+            "visible": true
+        },
+        {
+            "iconName": "C#",
+            "fileName": "csharp",
+            "visible": true
+        },
+        {
+            "iconName": "CSS3",
+            "fileName": "css3",
+            "visible": true
+        },
+        {
+            "iconName": "Docker",
+            "fileName": "docker",
+            "visible": true
+        },
+        {
+            "iconName": "Expo",
+            "fileName": "expo",
+            "visible": true
+        },
+        {
+            "iconName": "Figma",
+            "fileName": "figma",
+            "visible": true
+        },
+        {
+            "iconName": "Firebase",
+            "fileName": "firebase",
+            "visible": true
+        },
+        {
+            "iconName": "Git",
+            "fileName": "git",
+            "visible": true
+        },
+        {
+            "iconName": "Github",
+            "fileName": "github",
+            "visible": true
+        },
+        {
+            "iconName": "HTML5",
+            "fileName": "html5",
+            "visible": true
+        },
+        {
+            "iconName": "iOS",
+            "fileName": "ios",
+            "visible": true
+        },
+        {
+            "iconName": "JavaScript",
+            "fileName": "js",
+            "visible": true
+        },
+        {
+            "iconName": "Linkedin",
+            "fileName": "linkedin",
+            "visible": true
+        },
+        {
+            "iconName": "NodeJS",
+            "fileName": "nodejs",
+            "visible": true
+        },
+        {
+            "iconName": "Notion",
+            "fileName": "notion",
+            "visible": true
+        },
+        {
+            "iconName": "NPM",
+            "fileName": "npm",
+            "visible": true
+        },
+        {
+            "iconName": "Pinia",
+            "fileName": "pinia",
+            "visible": true
+        },
+        {
+            "iconName": "Quasar Framework",
+            "fileName": "quasar",
+            "visible": true
+        },
+        {
+            "iconName": "React / React Native",
+            "fileName": "react",
+            "visible": true
+        },
+        {
+            "iconName": "SQL Server",
+            "fileName": "sqlserver",
+            "visible": true
+        },
+        {
+            "iconName": "Storybook",
+            "fileName": "storybook",
+            "visible": true
+        },
+        {
+            "iconName": "Swagger",
+            "fileName": "swagger",
+            "visible": true
+        },
+        {
+            "iconName": "Swift",
+            "fileName": "swift",
+            "visible": true
+        },
+        {
+            "iconName": "TailwindCSS",
+            "fileName": "tailwindcss",
+            "visible": true
+        },
+        {
+            "iconName": "Tauri",
+            "fileName": "tauri",
+            "visible": true
+        },
+        {
+            "iconName": "Trello",
+            "fileName": "trello",
+            "visible": true
+        },
+        {
+            "iconName": "Vite",
+            "fileName": "vite",
+            "visible": true
+        },
+        {
+            "iconName": "VSCode",
+            "fileName": "vscode",
+            "visible": true
+        },
+        {
+            "iconName": "Vue",
+            "fileName": "vue",
+            "visible": true
+        },
+        {
+            "iconName": "Xcode",
+            "fileName": "xcode",
+            "visible": true
+        }
+    ]
+}
