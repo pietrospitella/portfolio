@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     vueI18n: './locales/i18n.config.ts' // if you are using custom path, default
   },
   build: {
-    transpile: [],
+    transpile: ['@nuxtjs/i18n'],
   },
   compatibilityDate: '2024-07-04'
 })
