@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  ssr: true, 
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -32,6 +31,10 @@ export default defineNuxtConfig({
       // Workaround for "Error: [404] Page not found: /manifest.json"
       failOnError: false,
     },
+  },
+  routeRules: {
+    // Disable homepage pre-rendered at build time
+    '/': { prerender: false },
   },
   i18n: {
     vueI18n: './locales/i18n.config.ts' // if you are using custom path, default
