@@ -28,13 +28,9 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      // Workaround for "Error: [404] Page not found: /manifest.json"
-      failOnError: false,
+      crawlLinks: true,
+      routes: ['/']
     },
-  },
-  routeRules: {
-    // Disable homepage pre-rendered at build time
-    '/': { prerender: false },
   },
   i18n: {
     vueI18n: './locales/i18n.config.ts' // if you are using custom path, default
