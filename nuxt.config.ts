@@ -26,6 +26,10 @@ export default defineNuxtConfig({
       'page:transition:finish',
     ],
   },
+  routeRules: {
+    // Disable homepage pre-rendered at build time
+    '/': { prerender: false },
+  },
   i18n: {
     vueI18n: './locales/i18n.config.ts' // if you are using custom path, default
   },
