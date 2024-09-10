@@ -2,10 +2,10 @@
   <div id="projects" class="hero min-h-screen">
     <div class="hero-content">
       <div data-aos="fade-down">
-        <h1 class="text-5xl font-bold">{{ $t('projectsTitle') }}</h1>
+        <h1 class="text-5xl font-bold">{{ t('projectsTitle') }}</h1>
         <div class="flex flex-col">
           <p class="py-6">
-            {{ $t('projectsDesc') }}
+            {{ t('projectsDesc') }}
           </p>
           <Swiper
             v-if="$viewport.isLessThan('tablet')"
@@ -77,7 +77,9 @@ import { defineAsyncComponent } from 'vue'
 import { ref, onMounted } from 'vue'
 import projectsJSON from '../assets/projects.json'
 import { useNuxtApp } from '#app'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const { $viewport } = useNuxtApp() as any
 const projects = ref()
 

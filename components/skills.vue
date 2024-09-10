@@ -2,10 +2,10 @@
   <div id="skills" class="hero min-h-screen">
     <div class="hero-content">
       <div data-aos="fade-down">
-        <h1 class="text-5xl font-bold">{{$t('skillsTitle')}}</h1>
+        <h1 class="text-5xl font-bold">{{t('skillsTitle')}}</h1>
         <div class="flex flex-col">
           <p class="py-6">
-            {{$t('skillsDesc')}}
+            {{t('skillsDesc')}}
           </p>
           <div class="mx-4 overflow-hidden">
             <Swiper
@@ -39,7 +39,9 @@
 import { defineAsyncComponent } from 'vue'
 import { ref, onMounted } from 'vue'
 import iconsJSON from '../assets/icons.json'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const skills = ref()
 
 const getIcon = (id: string) => defineAsyncComponent(() => import(`../assets/icons/${id}.svg?component`))

@@ -13,17 +13,17 @@
                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                     <li>
                         <NuxtLink @click="scrollToAnchor('about')">
-                            {{ $t('aboutTitle') }}
+                            {{ t('aboutTitle') }}
                         </NuxtLink>
                     </li>
                     <li>
                         <NuxtLink @click="scrollToAnchor('skills')">
-                            {{ $t('skillsTitle') }}
+                            {{ t('skillsTitle') }}
                         </NuxtLink>
                     </li>
                     <li>
                         <NuxtLink @click="scrollToAnchor('projects')">
-                            {{ $t('projectsTitle') }}
+                            {{ t('projectsTitle') }}
                         </NuxtLink>
                     </li>
                 </ul>
@@ -36,17 +36,17 @@
             <ul class="menu menu-horizontal px-1">
                 <li>
                     <NuxtLink @click="scrollToAnchor('about')">
-                        {{ $t('aboutTitle') }}
+                        {{ t('aboutTitle') }}
                     </NuxtLink>
                 </li>
                 <li>
                     <NuxtLink @click="scrollToAnchor('skills')">
-                        {{ $t('skillsTitle') }}
+                        {{ t('skillsTitle') }}
                     </NuxtLink>
                 </li>
                 <li>
                     <NuxtLink @click="scrollToAnchor('projects')">
-                        {{ $t('projectsTitle') }}
+                        {{ t('projectsTitle') }}
                     </NuxtLink>
                 </li>
             </ul>
@@ -105,11 +105,13 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const langValue = ref('')
 const langRef = ref()
 const themeValue = ref('')
 const themeRef = ref()
+const { t } = useI18n()
 
 const colorMode = useColorMode()
 const { setLocale } = useI18n()

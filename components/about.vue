@@ -2,9 +2,9 @@
     <div id="about" class="hero min-h-screen">
         <div class="hero-content flex-col lg:flex-row-reverse">
             <div data-aos="fade-down" class="mx-6">
-                <h1 class="text-5xl font-bold">{{ $t('aboutTitle') }}</h1>
+                <h1 class="text-5xl font-bold">{{ t('aboutTitle') }}</h1>
                 <p class="py-6">
-                    {{ $t('aboutDesc', { expYears: new Date().getFullYear() - 2021 }) }}
+                    {{ t('aboutDesc', { expYears: new Date().getFullYear() - 2021 }) }}
                 </p>
                 <div class="flex justify-center">
                     <ul class="timeline timeline-snap-icon max-md:timeline-compact max-md:timeline-vertical min-lg:timeline-horizontal">
@@ -99,3 +99,9 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
