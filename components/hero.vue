@@ -2,7 +2,7 @@
     <div id="hero" data-aos="fade-down" class="hero min-h-screen">
         <div class="hero-content flex-col lg:flex-row-reverse">
             <div class="relative">
-                <img src="../assets/images/hero-pic.jpeg" class="max-w-xs rounded-lg shadow-2xl" />
+                <img src="~/assets/images/hero-pic.jpeg" class="max-w-xs rounded-lg shadow-2xl" />
             </div>
             <div class="mx-6">
                 <h1 class="text-5xl font-bold">{{t('welcomeMsg')}}Pietro</h1>
@@ -10,7 +10,7 @@
                     {{t('welcomeMsg2')}}<b class="text-xl">{{t('role')}}</b>
                 </p>
                 <div class="actions flex justify-between items-center">
-                    <a href="../assets/files/Spitella_Pietro_CV_240822.pdf" download>
+                    <a href="~/assets/files/Spitella_Pietro_CV_240822.pdf" download>
                         <button class="btn btn-outline">
                             {{t('downloadCv')}}
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"

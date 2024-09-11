@@ -51,7 +51,7 @@
             >
               <figure class="px-10 pt-10">
                 <img
-                  src="../assets/projects/todospit.svg"
+                  src="~/assets/projects/todospit.svg"
                   class="rounded-xl w-20 h-20"
                 />
               </figure>
@@ -75,7 +75,7 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { ref, onMounted } from 'vue'
-import projectsJSON from '../assets/projects.json'
+import projectsJSON from '~/assets/projects.json'
 import { useNuxtApp } from '#app'
 import { useI18n } from 'vue-i18n'
 
@@ -83,7 +83,7 @@ const { t } = useI18n()
 const { $viewport } = useNuxtApp() as any
 const projects = ref()
 
-const getIcon = (id: string) => defineAsyncComponent(() => import(`../assets/projects/${id}.svg?component`))
+const getIcon = (id: string) => defineAsyncComponent(() => import(`~/assets/projects/${id}.svg?component`))
 
 onMounted(async () => {
   projects.value = projectsJSON.projects

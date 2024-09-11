@@ -38,7 +38,7 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { ref, onMounted } from 'vue'
-import iconsJSON from '../assets/icons.json'
+import iconsJSON from "~/assets/icons.json'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
