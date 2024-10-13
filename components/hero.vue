@@ -10,8 +10,8 @@
                     {{t('welcomeMsg2')}}<b class="text-xl">{{t('role')}}</b>
                 </p>
                 <div class="actions flex justify-between items-center">
-                    <a href="assets/files/Spitella_Pietro_CV_240822.pdf" download>
-                        <button class="btn btn-outline">
+                   
+                        <button class="btn btn-outline" @click="() => downloadFile('assets/files/Spitella_Pietro_CV_240822.pdf', 'Spitella_Pietro_CV_240822.pdf')">
                             {{t('downloadCv')}}
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -21,7 +21,7 @@
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
                             </svg>
                         </button>
-                    </a>
+                    
                     <a href="https://www.linkedin.com/in/pietro-spitella" target="_blank">
                         <button class="btn btn-outline p-3 rounded-full">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -55,4 +55,18 @@
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
+
+const downloadFile = (url: string, fileName: string) => {
+  fetch(url, { method: 'get', mode: 'no-cors', referrerPolicy: 'no-referrer' })
+    .then(res => res.blob())
+    .then(res => {
+      const aElement = document.createElement('a')
+      aElement.setAttribute('download', fileName)
+      const href = URL.createObjectURL(res)
+      aElement.href = href;
+      aElement.setAttribute('target', '_blank')
+      aElement.click()
+      URL.revokeObjectURL(href)
+    })
+}
 </script>

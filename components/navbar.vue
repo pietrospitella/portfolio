@@ -11,17 +11,17 @@
                 </div>
                 <ul tabindex="0"
                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                    <li>
+                    <li @click="hideAfterClick()">
                         <NuxtLink @click="scrollToAnchor('about')">
                             {{ t('aboutTitle') }}
                         </NuxtLink>
                     </li>
-                    <li>
+                    <li @click="hideAfterClick()">
                         <NuxtLink @click="scrollToAnchor('skills')">
                             {{ t('skillsTitle') }}
                         </NuxtLink>
                     </li>
-                    <li>
+                    <li @click="hideAfterClick()">
                         <NuxtLink @click="scrollToAnchor('projects')">
                             {{ t('projectsTitle') }}
                         </NuxtLink>
@@ -115,6 +115,15 @@ const { t } = useI18n()
 
 const colorMode = useColorMode()
 const { setLocale } = useI18n()
+
+const hideAfterClick = () => {
+    const menu = document.querySelector('.dropdown-content')
+    console.log(menu)
+    menu?.classList.add('hidden')
+    setTimeout(() => {
+        menu?.classList.remove('hidden')
+    }, 100);
+}
 
 const changeLang = () => {
     let isChecked = langRef.value.checked
